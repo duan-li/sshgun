@@ -10,6 +10,10 @@ type Config struct {
 	SuPassword string
 }
 
+func HostAddress(config Config) string {
+	return config.Host + ":" + strconv.Itoa(config.Port)
+}
+
 func NewConfig(host string, port int, user string, pass string, supass string) Config {
 	return Config{
 		Host:       host,

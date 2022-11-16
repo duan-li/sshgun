@@ -1,7 +1,7 @@
 package ssh
 
 import (
-	assert "github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/assert"
 	"testing"
 )
 
