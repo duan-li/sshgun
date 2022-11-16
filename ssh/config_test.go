@@ -5,6 +5,12 @@ import (
 	"testing"
 )
 
+func TestHostAddress(t *testing.T) {
+	config := NewConfig("host", 22, "user", "pass", "supass")
+
+	assert.Equal(t, "host:22", HostAddress(config))
+}
+
 func TestNewConfig(t *testing.T) {
 	config := NewConfig("host", 22, "user", "pass", "supass")
 

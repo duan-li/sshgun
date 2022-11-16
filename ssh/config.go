@@ -1,6 +1,9 @@
 package ssh
 
-import "golang.org/x/crypto/ssh"
+import (
+	"golang.org/x/crypto/ssh"
+	"strconv"
+)
 
 type Config struct {
 	Host       string
