@@ -1,10 +1,16 @@
-sshgun:
-  - servers:
+bullet:
+  servers:
       - ip: 127.0.0.1
         port: 22
         username: root
         password: root
         sudo: true
-        sudo_password: root
-  - commands:
+        sudopassword: root
+      - ip: 127.0.0.2
+        port: 22
+        username: root
+        password: root
+        sudo: false
+  commands:
       - echo "Hello World"
+      - ls -l ~
