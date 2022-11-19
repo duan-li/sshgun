@@ -6,6 +6,19 @@ import (
 	"testing"
 )
 
+func TestPaserNotWorking(t *testing.T) {
+	ycontent := []byte(`raincoat: 1
+coins: 5
+books: 23
+spectacles: 2
+chairs: 12
+pens: 6
+`)
+	y, err := Paser(ycontent)
+	assert.NotNil(t, err)
+	assert.Nil(t, y)
+}
+
 func TestPaser(t *testing.T) {
 	yfile, err := os.ReadFile("../bullet_template.yaml")
 
