@@ -5,7 +5,6 @@ import (
 	bullet "github.com/duan-li/sshgun/bullet"
 	"github.com/urfave/cli/v2"
 	"log"
-	"os"
 )
 
 const template = `bullet:
@@ -33,14 +32,10 @@ func InitBullet() func(cCtx *cli.Context) error {
 		}
 		file := cCtx.Args().First()
 
-		dir, err := os.Getwd()
+		_, err := bullet.WriteBullet(file, []byte(template))
+
 		if err != nil {
 			log.Fatal(err)
-		}
-		data := []byte(template)
-		err1 := os.WriteFile(dir+"/"+file, data, 0644)
-		if err1 != nil {
-			log.Fatal(err1)
 		}
 		return cli.Exit("New template created: "+file, 0)
 	}
@@ -53,17 +48,13 @@ func Validate() func(cCtx *cli.Context) error {
 		}
 		file := cCtx.Args().First()
 
-		dir, err := os.Getwd()
+		content, err := bullet.ReadBullet(file)
+
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		yfile, err := os.ReadFile(dir + "/" + file)
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		_, err1 := bullet.Paser(yfile)
+		_, err1 := bullet.Paser(content)
 
 		if err1 != nil {
 			log.Fatal(err1)
