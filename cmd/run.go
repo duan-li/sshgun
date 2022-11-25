@@ -37,7 +37,7 @@ func Run() func(cCtx *cli.Context) error {
 				fmt.Println("\033[1;32m>>> Command: ", command, "\033[0m")
 				out, err := ssh.Runner(config, command)
 				if err != nil {
-					log.Fatal(err)
+					fmt.Println(err)
 				}
 
 				fmt.Println(out)
