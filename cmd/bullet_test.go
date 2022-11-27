@@ -15,11 +15,6 @@ func TestValidate(t *testing.T) {
 	assert.NotNil(t, f)
 }
 
-func TestRun(t *testing.T) {
-	f := Run()
-	assert.NotNil(t, f)
-}
-
 func TestCheck(t *testing.T) {
 	f := Check()
 	assert.NotNil(t, f)
