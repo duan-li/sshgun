@@ -7,7 +7,7 @@ import (
 )
 
 const name = "sshgun"
-const usage = "a tool for managing ssh connections"
+const usage = "a tool allows you to run commands over SSH on many servers at once."
 
 func main() {
 	app := cmd.Init()
