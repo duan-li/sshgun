@@ -24,6 +24,8 @@ jobs:
       uses: 'actions/setup-go@v3'
       with: 
         go-version: '${{ matrix.go }}'
+    - name: Version
+      run: go version
     - name: Test
       run: go test -v ./...
 
