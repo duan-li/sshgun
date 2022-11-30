@@ -2,3 +2,4 @@
 project.md
 *.yaml
 func_test.go
+tmp/*
