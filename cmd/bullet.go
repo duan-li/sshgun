@@ -66,6 +66,12 @@ func Validate() func(cCtx *cli.Context) error {
 	}
 }
 
+func Encrypt() func(cCtx *cli.Context) error {
+	return func(cCtx *cli.Context) error {
+		return fmt.Errorf("TODO")
+	}
+}
+
 func Check() func(cCtx *cli.Context) error {
 	return func(cCtx *cli.Context) error {
 		if cCtx.NArg() < 1 {
