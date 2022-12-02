@@ -25,13 +25,15 @@ func Init() *cli.App {
 						Value:   22,
 					},
 					&cli.StringFlag{
-						Name:    "user",
+						Name:    "username",
 						Aliases: []string{"u"},
 						Usage:   "username",
 					},
-					&cli.StringFlag{
-						Name:  "password",
-						Usage: "password",
+					&cli.BoolFlag{
+						Name:    "password",
+						Aliases: []string{"P"},
+						Usage:   "password",
+						Value:   false,
 					},
 					&cli.BoolFlag{
 						Name:    "sudo",
