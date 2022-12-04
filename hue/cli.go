@@ -1,5 +1,7 @@
 package hue
 
+import "os"
+
 func info(message string) {
 	tealln(message)
 }
@@ -14,6 +16,7 @@ func error(message string) {
 
 func fatal(message string) {
 	magentaln(message)
+	os.Exit(1)
 }
 
 func success(message string) {
