@@ -2,10 +2,10 @@ package cmd
 
 import (
 	"fmt"
+	"github.com/duan-li/hue"
 	"github.com/duan-li/sshgun/ssh"
 	"github.com/urfave/cli/v2"
 	"golang.org/x/term"
-	"log"
 	"syscall"
 )
 
@@ -22,7 +22,7 @@ func Exec() func(cCtx *cli.Context) error {
 			fmt.Print("Password: ")
 			bytePassword, err := term.ReadPassword(int(syscall.Stdin))
 			if err != nil {
-				log.Fatal(err)
+				hue.Fatal(err.Error(), true)
 			}
 			config.Password = string(bytePassword)
 		}

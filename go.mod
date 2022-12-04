@@ -3,6 +3,7 @@ module github.com/duan-li/sshgun
 go 1.19
 
 require (
+	github.com/duan-li/hue v0.0.0-20221204104931-4611e24d83cf
 	github.com/stretchr/testify v1.8.1
 	github.com/urfave/cli/v2 v2.23.5
 	golang.org/x/crypto v0.2.0
