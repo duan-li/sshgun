@@ -15,13 +15,11 @@ const template = `bullet:
         port: 22
         username: root
         password: root
-        sudo: true
-        sudopassword: root
+        supassword: root
       - ip: 127.0.0.2
         port: 22
         username: root
         password: root
-        sudo: false
   commands:
       - echo "Hello World"
       - ls -l ~
@@ -92,7 +90,7 @@ func Check() func(cCtx *cli.Context) error {
 		}
 
 		for _, server := range data["bullet"].Servers {
-			config := ssh.NewConfig(server.Ip, server.Port, server.Username, server.Password, server.Sudopassword)
+			config := ssh.NewConfig(server.Ip, server.Port, server.Username, server.Password, server.Supassword)
 			sshConfig := ssh.NewSSHConfig(config)
 			_, err := sshClient.Dial("tcp", ssh.HostAddress(config), sshConfig)
 			if err != nil {

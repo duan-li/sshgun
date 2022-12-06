@@ -1,16 +1,14 @@
 bullet:
   servers:
-      - ip: 127.0.0.1
-        port: 22
-        username: root
-        password: root
-        sudo: true
-        sudopassword: root
-      - ip: 127.0.0.2
-        port: 22
-        username: root
-        password: root
-        sudo: false
+    - ip: 127.0.0.1
+      port: 22
+      username: root
+      password: root
+      supassword: root
+    - ip: 127.0.0.2
+      port: 22
+      username: root
+      password: root
   commands:
-      - echo "Hello World"
-      - ls -l ~
+    - echo "Hello World"
+    - ls -l ~

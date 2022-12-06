@@ -38,16 +38,14 @@ func TestPaser(t *testing.T) {
 	assert.Equal(t, 22, s1.Port)
 	assert.Equal(t, "root", s1.Username)
 	assert.Equal(t, "root", s1.Password)
-	assert.Equal(t, true, s1.Sudo)
-	assert.Equal(t, "root", s1.Sudopassword)
+	assert.Equal(t, "root", s1.Supassword)
 
 	s2 := y["bullet"].Servers[1]
 	assert.Equal(t, "127.0.0.2", s2.Ip)
 	assert.Equal(t, 22, s2.Port)
 	assert.Equal(t, "root", s2.Username)
 	assert.Equal(t, "root", s2.Password)
-	assert.Equal(t, false, s2.Sudo)
-	assert.Empty(t, s2.Sudopassword)
+	assert.Empty(t, s2.Supassword)
 
 	assert.Equal(t, "echo \"Hello World\"", y["bullet"].Commands[0])
 	assert.Equal(t, "ls -l ~", y["bullet"].Commands[1])

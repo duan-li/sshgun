@@ -29,7 +29,7 @@ func Run() func(cCtx *cli.Context) error {
 		}
 		hue.Blueln("d")
 		for _, server := range data["bullet"].Servers {
-			config := ssh.NewConfig(server.Ip, server.Port, server.Username, server.Password, server.Sudopassword)
+			config := ssh.NewConfig(server.Ip, server.Port, server.Username, server.Password, server.Supassword)
 
 			hue.Info("=======================================")
 			hue.Info(fmt.Sprintf("Server: %s", server.Ip))

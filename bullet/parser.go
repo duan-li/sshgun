@@ -10,12 +10,11 @@ type Bullet struct {
 }
 
 type server struct {
-	Ip           string
-	Port         int
-	Username     string
-	Password     string
-	Sudo         bool
-	Sudopassword string
+	Ip         string
+	Port       int
+	Username   string
+	Password   string
+	Supassword string
 }
 
 func Paser(content []uint8) (map[string]Bullet, error) {
