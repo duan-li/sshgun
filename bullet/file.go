@@ -5,6 +5,7 @@ import (
 	"os"
 )
 
+// WriteBullet write content to bullet file
 func WriteBullet(file string, data []byte) (bool, error) {
 	dir := CurrentDir()
 
@@ -17,6 +18,7 @@ func WriteBullet(file string, data []byte) (bool, error) {
 	return true, nil
 }
 
+// ReadBullet read content from bullet file
 func ReadBullet(file string) ([]byte, error) {
 
 	dir := CurrentDir()
@@ -29,6 +31,7 @@ func ReadBullet(file string) ([]byte, error) {
 	return data, nil
 }
 
+// CurrentDir get current directory
 func CurrentDir() string {
 	dir, err := os.Getwd()
 	if err != nil {
